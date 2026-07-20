@@ -53,22 +53,22 @@ ICON_PNG_PATH = os.path.join(DATA_DIR, "qrnova_icon.png")
 os.makedirs(HISTORY_DIR, exist_ok=True)
 
 # --------------------------------------------------------------------------- #
-#  Color palette — dark, modern, neon accent
+#  Color palette — light, clean, teal/pink accent
 # --------------------------------------------------------------------------- #
 
-BG_MAIN = "#0d0f14"
-BG_PANEL = "#12151d"
-BG_CARD = "#171b26"
-BG_INPUT = "#1c212e"
-BORDER = "#262b38"
+BG_MAIN = "#f4f6fa"
+BG_PANEL = "#ffffff"
+BG_CARD = "#ffffff"
+BG_INPUT = "#eef1f7"
+BORDER = "#dde1ea"
 
-ACCENT = "#00f5d4"        # neon teal
-ACCENT_DARK = "#00b8a0"
-ACCENT2 = "#ff2e88"        # neon pink
+ACCENT = "#0eb8a0"        # teal
+ACCENT_DARK = "#0a8f7d"
+ACCENT2 = "#e0245e"        # pink
 
-TEXT_MAIN = "#e9ebf0"
-TEXT_MUTED = "#868da0"
-TEXT_ON_ACCENT = "#08110f"
+TEXT_MAIN = "#1a1d24"
+TEXT_MUTED = "#6b7280"
+TEXT_ON_ACCENT = "#ffffff"
 
 FONT_FAMILY = "Segoe UI" if sys.platform.startswith("win") else "Helvetica"
 
@@ -133,8 +133,8 @@ class QRNovaApp:
         self._set_window_icon()
 
         # --- state ---
-        self.fg_color = "#00f5d4"
-        self.bg_color = "#0d0f14"
+        self.fg_color = "#1a1d24"
+        self.bg_color = "#ffffff"
         self.logo_path = None
         self.embed_logo = tk.BooleanVar(value=False)
         self.error_level = tk.StringVar(value="H (High ~30%)")
@@ -399,7 +399,7 @@ class QRNovaApp:
 
         clip_state = "disabled"
         self.copy_btn = self._make_button(btn_row, "Copy to Clipboard", self.copy_to_clipboard,
-                                           bg=ACCENT2, fg="#1a0410",
+                                           bg=ACCENT2, fg="#ffffff",
                                            hover_bg=self._lighten(ACCENT2), state=clip_state)
         self.copy_btn.pack(side="left", expand=True, fill="x", padx=(6, 0))
 
